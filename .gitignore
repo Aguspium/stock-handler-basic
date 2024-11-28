@@ -18,6 +18,7 @@ IntelliJ IDEA
 *.iws
 *.iml
 *.ipr
+/out/
 
 NetBeans
 /nbproject/private/
