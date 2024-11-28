@@ -1,17 +1,18 @@
 package Inventario;
 import Inventario.Interfaces.FuncionesObligatorias;
 
-public abstract class Producto implements FuncionesObligatorias {
+public class Producto implements FuncionesObligatorias {
         protected String nombre;
         protected int cantidad;
-        protected double precio;
+        protected double costo;
+        private double precio;
         protected int id;
         protected int vencimiento;
 
-    public Producto(String nombre, int cantidad, double precio){
+    public Producto(String nombre, int cantidad, double costo){
         this.nombre = nombre;
         this.cantidad = cantidad;
-        this.precio = precio;
+        this.costo = costo;
     }
 
     public int getCantidad() {
@@ -30,25 +31,26 @@ public abstract class Producto implements FuncionesObligatorias {
         this.nombre = nombre;
     }
 
-    public double getPrecio() {
+    public void setCosto(double costo) {
+        this.costo = costo;
+
+    }
+
+    public double getPrecio(){
         return precio;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
     @Override
-    public void GeneratedId() {
+    public int generadorId() {
+     return id++;
 
     }
 
     @Override
-    public void GeneratedPrecio() {
+    public void generadorPrecio() {
+    double aux = costo * 0.5;
+    precio = aux + costo;
 
     }
-    @Override
-    public void GeneratedVencimiento() {
 
-    }
 }
