@@ -5,4 +5,5 @@ public class Deposito {
     public Scanner sc = new Scanner(System.in);
     Producto carnes, fruta, lacteo;
 
+
 }
