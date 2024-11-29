@@ -1,11 +1,11 @@
 package Inventario;
 
 public class Carnes extends Producto {
-    private int cantidadgrasa;
+    private String cantidadgrasa;
     private int cantidadproteinas;
 
-    public Carnes(String nombre, int cantidad, double precio, int cantidadgrasa, int cantidadproteinas ){
-        super(nombre, cantidad, precio);
+    public Carnes(String nombre, int cantidad, double costo, String cantidadgrasa, int cantidadproteinas ){
+        super(nombre, cantidad, costo);
         this.cantidadgrasa = cantidadgrasa;
         this.cantidadproteinas = cantidadproteinas;
     }
@@ -18,11 +18,11 @@ public class Carnes extends Producto {
         this.cantidadproteinas = cantidadproteinas;
     }
 
-    public int getCantidadgrasa() {
+    public String getCantidadgrasa() {
         return cantidadgrasa;
     }
 
-    public void setCantidadgrasa(int cantidadgrasa) {
+    public void setCantidadgrasa(String cantidadgrasa) {
         this.cantidadgrasa = cantidadgrasa;
     }
 

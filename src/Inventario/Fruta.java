@@ -1,20 +1,20 @@
 package Inventario;
 
 public class Fruta extends Producto{
-    private int cantidadagua;
+    private String cantidadagua;
     private int cantidadazucar;
 
-    public Fruta(String nombre, int cantidad, double precio, int cantidadagua, int cantidadazucar){
-        super(nombre, cantidad, precio);
+    public Fruta(String nombre, int cantidad, double costo, String cantidadagua, int cantidadazucar){
+        super(nombre, cantidad, costo);
         this.cantidadagua = cantidadagua;
         this.cantidadazucar = cantidadazucar;
     }
 
-    public int getCantidadagua() {
+    public String getCantidadagua() {
         return cantidadagua;
     }
 
-    public void setCantidadagua(int cantidadagua) {
+    public void setCantidadagua(String cantidadagua) {
         this.cantidadagua = cantidadagua;
     }
 
