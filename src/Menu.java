@@ -18,7 +18,7 @@ public class Menu {
 
         switch (opcion){
             case 1:
-                new Deposito();
+                Deposito.listaProductos();
 
                 break;
             case 2:
@@ -26,8 +26,8 @@ public class Menu {
 
                 break;
             case 3:
-
-
+                Deposito.eliminarProducto();
+                
                 break;
 
             case 4:
