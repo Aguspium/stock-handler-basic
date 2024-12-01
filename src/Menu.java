@@ -18,6 +18,7 @@ public class Menu {
 
         switch (opcion){
             case 1:
+                new Deposito();
 
                 break;
             case 2:
@@ -25,11 +26,6 @@ public class Menu {
 
                 break;
             case 3:
-                Producto edit = Utils.listaproductos.get(0);
-
-                edit.Editor(edit);
-
-
 
 
                 break;
