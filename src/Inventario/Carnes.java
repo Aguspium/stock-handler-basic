@@ -30,9 +30,9 @@ public class Carnes extends Producto {
 
 
 
+
     @Override
     public void Editor(Producto edit){
-        if(edit instanceof Carnes){
             Carnes carnes = (Carnes) edit;
             System.out.println("Que deseas Editar? ");
             System.out.println("1) Editar Nombre: "+ carnes.getNombre() );
@@ -76,7 +76,7 @@ public class Carnes extends Producto {
 
                 }
 
-        }
+
 
 
 

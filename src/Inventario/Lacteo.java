@@ -39,9 +39,11 @@ public class Lacteo extends Producto {
         this.vegano = vegano;
     }
 
+
+
     @Override
     public void Editor(Producto edit){
-        if(edit instanceof Lacteo lacteos){
+        Lacteo lacteos = (Lacteo) edit;
             System.out.println("Que deseas Editar? ");
             System.out.println("1) Editar Nombre: "+ lacteos.getNombre() );
             System.out.println("2) Editar Cantidad: "+ lacteos.getCantidad() );
@@ -104,4 +106,3 @@ public class Lacteo extends Producto {
             }
         }
     }
-}

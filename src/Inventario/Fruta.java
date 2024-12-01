@@ -28,9 +28,10 @@ public class Fruta extends Producto{
         this.cantidadazucar = cantidadazucar;
     }
 
+
+
     @Override
     public void Editor(Producto edit){
-        if(edit instanceof Fruta){
             Fruta frutas = (Fruta) edit;
             System.out.println("Que deseas Editar? ");
             System.out.println("1) Editar Nombre: "+ frutas.getNombre() );
@@ -77,8 +78,3 @@ public class Fruta extends Producto{
         }
 
     }
-
-
-
-
-}
