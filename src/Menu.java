@@ -25,9 +25,9 @@ public class Menu {
 
                 break;
             case 3:
-                Producto view = Utils.listaproductos.get(0);
-                System.out.println(view.getNombre());
-                System.out.println(view.getPrecio());
+                Producto edit = Utils.listaproductos.get(0);
+                edit.Editor(edit);
+
 
 
 

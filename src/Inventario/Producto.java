@@ -31,8 +31,8 @@ public class Producto implements FuncionesObligatorias {
         this.nombre = nombre;
     }
 
-    public void setCosto(double costo) {
-        this.costo = costo;
+    public void setPrecio(double precio) {
+        this.precio = precio;
 
     }
 
@@ -52,5 +52,5 @@ public class Producto implements FuncionesObligatorias {
     precio = aux + costo;
 
     }
-
+    public void Editor(Producto view){}
 }

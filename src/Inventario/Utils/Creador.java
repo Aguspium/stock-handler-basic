@@ -72,7 +72,7 @@ public class Creador {
                 System.out.println("El producto es vegano? si/no");
 
                 while (true) {
-                    String eleccion = Utils.sc.next().trim().toLowerCase();
+                    String eleccion = Utils.sc.next();
                     if (eleccion.equalsIgnoreCase("si")) {
                         vegano = true;
                         break;
