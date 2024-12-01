@@ -1,3 +1,6 @@
+import Inventario.Carnes;
+import Inventario.Fruta;
+import Inventario.Lacteo;
 import Inventario.Producto;
 import Inventario.Utils.Utils;
 
@@ -9,6 +12,8 @@ public class Deposito {
             System.out.println(i + 1 +") "+ view.getNombre());
 
         }
+        Deposito.verProducto();
+
     }
 
     public static void eliminarProducto(){
@@ -25,6 +30,35 @@ public class Deposito {
             System.out.println("Eliminacion cancelada");
         }
 
+
+    }
+
+    public static void verProducto(){
+        System.out.println("elige el producto para ver: ");
+        int eleccion = Utils.sc.nextInt() - 1;
+
+        Producto view = Utils.listaproductos.get(eleccion);
+        System.out.println("nombre: "+view.getNombre());
+        System.out.println("cantidad: "+view.getCantidad());
+        System.out.println("precio" +view.getPrecio());
+        System.out.println("id: " +view.getId());
+        System.out.println("vencimiento: "+view.getVencimiento());
+
+        if (view instanceof Carnes){
+            System.out.println("grasa: "+((Carnes) view).getCantidadgrasa()+"%");
+            System.out.println("proteinas"+((Carnes) view).getCantidadproteinas()+"g");
+
+        }else if (view instanceof Fruta){
+            System.out.println("agua: "+((Fruta) view).getCantidadagua()+"%");
+            System.out.println("azucar: "+((Fruta) view).getCantidadazucar()+ "g");
+
+        }else{ Lacteo lacteo = (Lacteo) view;
+
+            System.out.println("agua: "+lacteo.getPorcentajeagua()+"%");
+
+            System.out.println("calcio: "+lacteo.getPorcentajecalcio()+ "%");
+
+        }
 
     }
 

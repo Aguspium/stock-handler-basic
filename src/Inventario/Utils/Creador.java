@@ -51,6 +51,7 @@ public class Creador {
                 porsentaje = Utils.sc.next();
                 Producto fruta = new Fruta(nombre, cantidad, costo, porsentaje, cantidadGramos);
                 fruta.generadorPrecio();
+                fruta.generadorId();
                 Utils.listaproductos.add(fruta);
                 new Menu();
 
@@ -79,6 +80,7 @@ public class Creador {
 
                 Producto lacteo = new Lacteo(nombre, cantidad, costo, porsentaje, porsentaje2, vegano);
                 lacteo.generadorPrecio();
+                lacteo.generadorId();
 
                 Utils.listaproductos.add(lacteo);
                 break;

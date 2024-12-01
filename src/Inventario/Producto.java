@@ -7,7 +7,7 @@ public class Producto implements FuncionesObligatorias {
         protected double costo;
         private double precio;
         protected int id;
-        protected int vencimiento;
+        protected int vencimiento = 0;
 
     public Producto(String nombre, int cantidad, double costo){
         this.nombre = nombre;
@@ -40,10 +40,17 @@ public class Producto implements FuncionesObligatorias {
         return precio;
     }
 
-    @Override
-    public int generadorId() {
-     return id++;
+    public int getVencimiento() {
+        return vencimiento;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void generadorId() {
+     id += 1;
     }
 
     @Override
