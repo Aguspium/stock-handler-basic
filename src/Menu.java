@@ -26,6 +26,7 @@ public class Menu {
                 break;
             case 3:
                 Producto edit = Utils.listaproductos.get(0);
+
                 edit.Editor(edit);
 
 

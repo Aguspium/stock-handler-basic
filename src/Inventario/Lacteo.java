@@ -19,7 +19,6 @@ public class Lacteo extends Producto {
     public String getPorcentajecalcio() {
         return porcentajecalcio;
     }
-
     public void setPorcentajecalcio(String porcentajecalcio) {
         this.porcentajecalcio = porcentajecalcio;
     }
@@ -42,8 +41,7 @@ public class Lacteo extends Producto {
 
     @Override
     public void Editor(Producto edit){
-        if(edit instanceof Lacteo){
-            Lacteo lacteos = (Lacteo) edit;
+        if(edit instanceof Lacteo lacteos){
             System.out.println("Que deseas Editar? ");
             System.out.println("1) Editar Nombre: "+ lacteos.getNombre() );
             System.out.println("2) Editar Cantidad: "+ lacteos.getCantidad() );
@@ -103,14 +101,7 @@ public class Lacteo extends Producto {
                     System.out.println("Opcion no valida");
                     break;
 
-
-
             }
-
         }
-
     }
-
-
-
 }
