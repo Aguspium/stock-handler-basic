@@ -17,7 +17,12 @@ public class Deposito {
     }
 
     public static void eliminarProducto(){
-        Deposito.listaProductos();
+
+        for(int i = 0; i < Utils.listaproductos.size(); i++ ){
+            Producto view = Utils.listaproductos.get(i);
+            System.out.println(i + 1 +") "+ view.getNombre());
+
+        }
         System.out.println("Selecciona el producto a eleminar: ");
         int eleccion = Utils.sc.nextInt() - 1;
         Producto producto = Utils.listaproductos.get(eleccion);
