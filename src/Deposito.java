@@ -12,17 +12,11 @@ public class Deposito {
             System.out.println(i + 1 +") "+ view.getNombre());
 
         }
-        Deposito.verProducto();
-
     }
 
     public static void eliminarProducto(){
 
-        for(int i = 0; i < Utils.listaproductos.size(); i++ ){
-            Producto view = Utils.listaproductos.get(i);
-            System.out.println(i + 1 +") "+ view.getNombre());
-
-        }
+        Deposito.listaProductos();
         System.out.println("Selecciona el producto a eleminar: ");
         int eleccion = Utils.sc.nextInt() - 1;
         Producto producto = Utils.listaproductos.get(eleccion);
@@ -39,6 +33,8 @@ public class Deposito {
     }
 
     public static void verProducto(){
+
+        Deposito.listaProductos();
         System.out.println("elige el producto para ver: ");
         int eleccion = Utils.sc.nextInt() - 1;
 

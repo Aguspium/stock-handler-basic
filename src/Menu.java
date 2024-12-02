@@ -18,7 +18,7 @@ public class Menu {
 
         switch (opcion){
             case 1:
-                Deposito.listaProductos();
+                Deposito.verProducto();
 
                 break;
             case 2:
