@@ -1,4 +1,3 @@
-import Inventario.Producto;
 import Inventario.Utils.Creador;
 import Inventario.Utils.Utils;
 
@@ -22,7 +21,7 @@ public class Menu {
 
                 break;
             case 2:
-                new Creador(2);
+                new Creador();
 
                 break;
             case 3:
@@ -31,6 +30,7 @@ public class Menu {
                 break;
 
             case 4:
+                Deposito.editarProducto();
 
                 break;
             default:

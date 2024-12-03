@@ -16,7 +16,7 @@ public class Deposito {
 
     public static void eliminarProducto(){
 
-        Deposito.listaProductos();
+        listaProductos();
         System.out.println("Selecciona el producto a eleminar: ");
         int eleccion = Utils.sc.nextInt() - 1;
         Producto producto = Utils.listaproductos.get(eleccion);
@@ -34,7 +34,7 @@ public class Deposito {
 
     public static void verProducto(){
 
-        Deposito.listaProductos();
+        listaProductos();
         System.out.println("elige el producto para ver: ");
         int eleccion = Utils.sc.nextInt() - 1;
 
@@ -60,6 +60,16 @@ public class Deposito {
             System.out.println("calcio: "+lacteo.getPorcentajecalcio()+ "%");
 
         }
+
+    }
+
+    public static void editarProducto(){
+        listaProductos();
+        System.out.println("Elige el producto a editar");
+        int eleccion = Utils.sc.nextInt() - 1;
+
+        Producto producto = Utils.listaproductos.get(eleccion);
+        producto.Editor(producto);
 
     }
 

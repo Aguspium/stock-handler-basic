@@ -1,29 +1,24 @@
 package Inventario.Utils;
-
 import Inventario.Carnes;
 import Inventario.Fruta;
 import Inventario.Lacteo;
 import Inventario.Producto;
-
 import java.awt.*;
 
 public class Creador {
 
-    public Creador(int opcion){
-        if (opcion == 2){
+    public Creador(){
             System.out.println("Ingresa el tipo de producto: ");
             System.out.println("1) carne ");
             System.out.println("2) Fruta ");
             System.out.println("3) Lacteo ");
             int tipo = Utils.sc.nextInt();
             agregarProducto(tipo);
-
-        }
-
-
     }
 
     public void agregarProducto(int tipo){
+        String porsentaje;
+        int cantidadGramos;
 
         System.out.println("Ingresa el nombre del producto");
         String nombre = Utils.sc.next();
@@ -35,9 +30,9 @@ public class Creador {
         switch (tipo){
             case 1: //Carnes
             System.out.println("Ingresa el % de grasa del producto del producto");
-                String porsentaje = Utils.sc.next();
+                porsentaje = Utils.sc.next();
             System.out.println("Ingresa la cantidad de proteinas del producto");
-                int cantidadGramos = Utils.sc.nextInt();
+                cantidadGramos = Utils.sc.nextInt();
                 Producto carnes = new Carnes(nombre, cantidad, costo, porsentaje, cantidadGramos);
             carnes.generadorPrecio();
             carnes.generadorId();
@@ -88,7 +83,5 @@ public class Creador {
                 System.out.println("Opcion no valida");
 
         }
-
-
     }
 }

@@ -1,5 +1,4 @@
 package Inventario;
-
 import Inventario.Utils.Utils;
 
 public class Fruta extends Producto{

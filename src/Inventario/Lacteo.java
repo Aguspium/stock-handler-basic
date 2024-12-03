@@ -2,8 +2,6 @@ package Inventario;
 
 import Inventario.Utils.Utils;
 
-import javax.swing.text.Style;
-
 public class Lacteo extends Producto {
     private String porcentajeagua;
     private String porcentajecalcio;
@@ -50,7 +48,7 @@ public class Lacteo extends Producto {
             System.out.println("3) Editar Precio: "+ lacteos.getPrecio() );
             System.out.println("4) Editar Cantidad de Agua: " + lacteos.getPorcentajeagua());
             System.out.println("5) Editar Cantidad de Calcio:"+ lacteos.getPorcentajecalcio());
-            String a = "";
+            String a;
             if(lacteos.isVegano()){a = "si es vegano";}else{a = "no es vegano";}
             System.out.println("6) Editar Vegano: "+ a );
             int opcion = Utils.sc.nextInt();

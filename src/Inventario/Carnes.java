@@ -1,5 +1,4 @@
 package Inventario;
-
 import Inventario.Utils.Utils;
 
 public class Carnes extends Producto {
@@ -11,7 +10,6 @@ public class Carnes extends Producto {
         this.cantidadgrasa = cantidadgrasa;
         this.cantidadproteinas = cantidadproteinas;
     }
-
     public int getCantidadproteinas() {
         return cantidadproteinas;
     }
@@ -27,9 +25,6 @@ public class Carnes extends Producto {
     public void setCantidadgrasa(String cantidadgrasa) {
         this.cantidadgrasa = cantidadgrasa;
     }
-
-
-
 
     @Override
     public void Editor(Producto edit){
@@ -74,18 +69,6 @@ public class Carnes extends Producto {
                         System.out.println("Opcion no valida");
                         break;
 
-                }
-
-
-
-
-
-
-
+        }
     }
-
-
-
-
-
 }
