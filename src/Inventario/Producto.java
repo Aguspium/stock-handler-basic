@@ -1,12 +1,13 @@
 package Inventario;
 import Inventario.Interfaces.FuncionesObligatorias;
+import Inventario.Utils.Utils;
 
 public class Producto implements FuncionesObligatorias {
         protected String nombre;
         protected int cantidad;
         protected double costo;
         private double precio;
-        protected int id;
+        protected static int id;
         protected int vencimiento = 0;
 
     public Producto(String nombre, int cantidad, double costo){
@@ -48,9 +49,8 @@ public class Producto implements FuncionesObligatorias {
         return id;
     }
 
-    @Override
-    public void generadorId() {
-     id += 1;
+    public static void generateId(){
+        id = Utils.rm.nextInt();
     }
 
     @Override

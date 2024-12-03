@@ -5,72 +5,84 @@ import Inventario.Producto;
 import Inventario.Utils.Utils;
 
 public class Deposito {
-    public static void listaProductos(){
-        System.out.println("Lista de Productos ");
-        for(int i = 0; i < Utils.listaproductos.size(); i++ ){
-            Producto view = Utils.listaproductos.get(i);
-            System.out.println(i + 1 +") "+ view.getNombre());
-
+    public static void listaProductos() {
+        if (Utils.listaproductos.isEmpty()) {
+            System.out.println("Lista de Productos Vacia ");
+        } else {
+            System.out.println("Lista de Productos ");
+            for (Producto p : Utils.listaproductos) {
+                int a = Utils.listaproductos.indexOf(p) + 1;
+                System.out.println(a + ") " + p.getNombre());
+            }
         }
     }
 
-    public static void eliminarProducto(){
+    public static void eliminarProducto() {
+        if (Utils.listaproductos.isEmpty()) {
+            System.out.println("Lista de Productos Vacia ");
 
-        listaProductos();
-        System.out.println("Selecciona el producto a eleminar: ");
-        int eleccion = Utils.sc.nextInt() - 1;
-        Producto producto = Utils.listaproductos.get(eleccion);
-        System.out.println("Confirmas eliminar a: "+ producto.getNombre()+ " Si/No");
-        String opcion = Utils.sc.next();
-        if(opcion.equalsIgnoreCase("Si")){
-            Utils.listaproductos.remove(eleccion);
-            System.out.println("Eliminacion completada");
-        }else{
-            System.out.println("Eliminacion cancelada");
+        } else {
+            listaProductos();
+            System.out.println("Selecciona el producto a eleminar: ");
+            int eleccion = Utils.sc.nextInt() - 1;
+            Producto producto = Utils.listaproductos.get(eleccion);
+            System.out.println("Confirmas eliminar a: " + producto.getNombre() + " Si/No");
+            String opcion = Utils.sc.next();
+            if (opcion.equalsIgnoreCase("Si")) {
+                Utils.listaproductos.remove(eleccion);
+                System.out.println("Eliminacion completada");
+            } else {
+                System.out.println("Eliminacion cancelada");
+            }
         }
-
-
     }
 
     public static void verProducto(){
+            if (Utils.listaproductos.isEmpty()) {
+                System.out.println("Lista de Productos Vacia ");
 
-        listaProductos();
-        System.out.println("elige el producto para ver: ");
-        int eleccion = Utils.sc.nextInt() - 1;
+                } else {
 
-        Producto view = Utils.listaproductos.get(eleccion);
-        System.out.println("nombre: "+view.getNombre());
-        System.out.println("cantidad: "+view.getCantidad());
-        System.out.println("precio" +view.getPrecio());
-        System.out.println("id: " +view.getId());
-        System.out.println("vencimiento: "+view.getVencimiento());
+                listaProductos();
+                System.out.println("elige el producto para ver: ");
+                int eleccion = Utils.sc.nextInt() - 1;
 
-        if (view instanceof Carnes){
-            System.out.println("grasa: "+((Carnes) view).getCantidadgrasa()+"%");
-            System.out.println("proteinas"+((Carnes) view).getCantidadproteinas()+"g");
+                Producto view = Utils.listaproductos.get(eleccion);
+                System.out.println("nombre: " + view.getNombre());
+                System.out.println("cantidad: " + view.getCantidad());
+                System.out.println("precio" + view.getPrecio());
+                System.out.println("id: " + view.getId());
+                System.out.println("vencimiento: " + view.getVencimiento());
 
-        }else if (view instanceof Fruta){
-            System.out.println("agua: "+((Fruta) view).getCantidadagua()+"%");
-            System.out.println("azucar: "+((Fruta) view).getCantidadazucar()+ "g");
+                if (view instanceof Carnes) {
+                    System.out.println("grasa: " + ((Carnes) view).getCantidadgrasa() + "%");
+                    System.out.println("proteinas: " + ((Carnes) view).getCantidadproteinas() + "g");
 
-        }else{ Lacteo lacteo = (Lacteo) view;
+                } else if (view instanceof Fruta) {
+                    System.out.println("agua: " + ((Fruta) view).getCantidadagua() + "%");
+                    System.out.println("azucar: " + ((Fruta) view).getCantidadazucar() + "g");
 
-            System.out.println("agua: "+lacteo.getPorcentajeagua()+"%");
+                } else {
+                    Lacteo lacteo = (Lacteo) view;
 
-            System.out.println("calcio: "+lacteo.getPorcentajecalcio()+ "%");
+                    System.out.println("agua: " + lacteo.getPorcentajeagua() + "%");
 
+                    System.out.println("calcio: " + lacteo.getPorcentajecalcio() + "%");
+
+            }
         }
-
     }
 
     public static void editarProducto(){
+    if(Utils.listaproductos.isEmpty()){
+        System.out.println("Lista de Productos Vacia ");
+
+        }else {
         listaProductos();
         System.out.println("Elige el producto a editar");
         int eleccion = Utils.sc.nextInt() - 1;
 
         Producto producto = Utils.listaproductos.get(eleccion);
-        producto.Editor(producto);
-
+        producto.Editor(producto);}
     }
-
 }
