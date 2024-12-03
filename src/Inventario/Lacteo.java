@@ -93,7 +93,6 @@ public class Lacteo extends Producto {
                         } else {
                             System.out.println("Opcion erronea debes elegir si/no");
                         }
-
                     }
                     break;
 
