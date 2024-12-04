@@ -18,16 +18,16 @@ public class Creador {
             if (tipo == 1 || tipo == 2 || tipo == 3) {
                 agregarProducto(tipo);
             } else {
-                System.out.println("Opcion no valida");
+                System.out.println("Opción invalida");
             }
         } catch (InputMismatchException e) {
-            System.out.println("Opcion no valida");
+            System.out.println("Opción inválida");
             Utils.sc.nextLine();
         }
     }
 
     public void agregarProducto(int tipo) {
-        String porsentaje;
+        String porCentaje;
         int cantidadGramos;
         try {
             System.out.println("Ingresa el nombre del producto");
@@ -40,10 +40,10 @@ public class Creador {
             switch (tipo) {
                 case 1: //Carnes
                     System.out.println("Ingresa el % de grasa del producto del producto");
-                    porsentaje = Utils.sc.next();
+                    porCentaje = Utils.sc.next();
                     System.out.println("Ingresa la cantidad de proteinas del producto");
                     cantidadGramos = Utils.sc.nextInt();
-                    Producto carnes = new Carnes(nombre, cantidad, costo, porsentaje, cantidadGramos);
+                    Producto carnes = new Carnes(nombre, cantidad, costo, porCentaje, cantidadGramos);
                     carnes.generadorPrecio();
                     Producto.generateId();
                     Utils.listaproductos.add(carnes);
@@ -53,8 +53,8 @@ public class Creador {
                     System.out.println("Ingresa la cantidad de Gramos de azucar del producto");
                     cantidadGramos = Utils.sc.nextInt();
                     System.out.println("Ingresa la cantidad de agua del producto");
-                    porsentaje = Utils.sc.next();
-                    Producto fruta = new Fruta(nombre, cantidad, costo, porsentaje, cantidadGramos);
+                    porCentaje = Utils.sc.next();
+                    Producto fruta = new Fruta(nombre, cantidad, costo, porCentaje, cantidadGramos);
                     fruta.generadorPrecio();
                     Producto.generateId();
                     Utils.listaproductos.add(fruta);
@@ -63,7 +63,7 @@ public class Creador {
                     break;
                 case 3: //Lacteos
                     System.out.println("Ingresa el % de Agua del producto del Lacteo");
-                    porsentaje = Utils.sc.next();
+                    porCentaje = Utils.sc.next();
                     System.out.println("Ingresa el % de Calcio del producto");
                     String porsentaje2 = Utils.sc.next();
                     System.out.println("El producto es vegano? si/no");
@@ -83,7 +83,7 @@ public class Creador {
                         }
                     }
 
-                    Producto lacteo = new Lacteo(nombre, cantidad, costo, porsentaje, porsentaje2, vegano);
+                    Producto lacteo = new Lacteo(nombre, cantidad, costo, porCentaje, porsentaje2, vegano);
                     lacteo.generadorPrecio();
                     Producto.generateId();
 
