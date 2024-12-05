@@ -59,5 +59,6 @@ public class Producto implements FuncionesObligatorias {
     precio = aux + costo;
 
     }
-    public void Editor(Producto view){}
+
+    public void Editor(Producto view) {}
 }

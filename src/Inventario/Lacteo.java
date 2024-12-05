@@ -3,29 +3,29 @@ package Inventario;
 import Inventario.Utils.Utils;
 
 public class Lacteo extends Producto {
-    private String porcentajeagua;
-    private String porcentajecalcio;
+    private int porcentajeagua;
+    private int porcentajecalcio;
     private boolean vegano;
 
-    public Lacteo(String nombre, int cantidad, double costo, String porcentajeagua, String porcentajecalcio, boolean vegano){
+    public Lacteo(String nombre, int cantidad, double costo, int porcentajeagua, int porcentajecalcio, boolean vegano){
         super(nombre, cantidad, costo);
         this.porcentajeagua = porcentajeagua;
         this.porcentajecalcio = porcentajecalcio;
         this.vegano = vegano;
     }
 
-    public String getPorcentajecalcio() {
+    public int getPorcentajecalcio() {
         return porcentajecalcio;
     }
-    public void setPorcentajecalcio(String porcentajecalcio) {
+    public void setPorcentajecalcio(int porcentajecalcio) {
         this.porcentajecalcio = porcentajecalcio;
     }
 
-    public String getPorcentajeagua() {
+    public int getPorcentajeagua() {
         return porcentajeagua;
     }
 
-    public void setPorcentajeagua(String porcentajeagua) {
+    public void setPorcentajeagua(int porcentajeagua) {
         this.porcentajeagua = porcentajeagua;
     }
 
@@ -72,12 +72,12 @@ public class Lacteo extends Producto {
                     break;
                 case 4:
                     System.out.println("Ingrese el nuevo porsentaje de agua: ");
-                    String cantidadagua = Utils.sc.next();
+                    int cantidadagua = Utils.sc.nextInt();
                     lacteos.setPorcentajeagua(cantidadagua);
                     break;
                 case 5:
                     System.out.println("Ingrese el nuevo porsentaje de calcio: ");
-                    String cantidadcalcio = Utils.sc.next();
+                    int cantidadcalcio = Utils.sc.nextInt();
                     lacteos.setPorcentajecalcio(cantidadcalcio);
                     break;
                 case 6:

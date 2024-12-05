@@ -2,10 +2,10 @@ package Inventario;
 import Inventario.Utils.Utils;
 
 public class Carnes extends Producto {
-    private String cantidadgrasa;
+    private int cantidadgrasa;
     private int cantidadproteinas;
 
-    public Carnes(String nombre, int cantidad, double costo, String cantidadgrasa, int cantidadproteinas ){
+    public Carnes(String nombre, int cantidad, double costo, int cantidadgrasa, int cantidadproteinas ){
         super(nombre, cantidad, costo);
         this.cantidadgrasa = cantidadgrasa;
         this.cantidadproteinas = cantidadproteinas;
@@ -18,11 +18,11 @@ public class Carnes extends Producto {
         this.cantidadproteinas = cantidadproteinas;
     }
 
-    public String getCantidadgrasa() {
+    public int getCantidadgrasa() {
         return cantidadgrasa;
     }
 
-    public void setCantidadgrasa(String cantidadgrasa) {
+    public void setCantidadgrasa(int cantidadgrasa) {
         this.cantidadgrasa = cantidadgrasa;
     }
 
@@ -56,7 +56,7 @@ public class Carnes extends Producto {
                     break;
                 case 4:
                     System.out.println("Ingrese la nueva cantidad de grasa: ");
-                    String cantidadgrasa = Utils.sc.next();
+                    int cantidadgrasa = Utils.sc.nextInt();
                     carnes.setCantidadgrasa(cantidadgrasa);
                     break;
                 case 5:

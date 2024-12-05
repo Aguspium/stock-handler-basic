@@ -2,20 +2,20 @@ package Inventario;
 import Inventario.Utils.Utils;
 
 public class Fruta extends Producto{
-    private String cantidadagua;
+    private int cantidadagua;
     private int cantidadazucar;
 
-    public Fruta(String nombre, int cantidad, double costo, String cantidadagua, int cantidadazucar){
+    public Fruta(String nombre, int cantidad, double costo, int cantidadagua, int cantidadazucar){
         super(nombre, cantidad, costo);
         this.cantidadagua = cantidadagua;
         this.cantidadazucar = cantidadazucar;
     }
 
-    public String getCantidadagua() {
+    public int getCantidadagua() {
         return cantidadagua;
     }
 
-    public void setCantidadagua(String cantidadagua) {
+    public void setCantidadagua(int cantidadagua) {
         this.cantidadagua = cantidadagua;
     }
 
@@ -59,7 +59,7 @@ public class Fruta extends Producto{
                     break;
                 case 4:
                     System.out.println("Ingrese la nueva cantidad de agua: ");
-                    String cantidadagua = Utils.sc.next();
+                    int cantidadagua = Utils.sc.nextInt();
                     frutas.setCantidadagua(cantidadagua);
                     break;
                 case 5:
