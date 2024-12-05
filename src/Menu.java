@@ -1,8 +1,5 @@
 import Inventario.Utils.Creador;
-import Inventario.Utils.Utils;
 import Inventario.Validar.Validar;
-
-import java.util.InputMismatchException;
 
 public class Menu {
 
