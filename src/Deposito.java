@@ -40,7 +40,6 @@ public class Deposito {
                     return true; }
             System.out.println("Opcion incorrecta solo ingresar [si/no]");
         }
-
     }
 
     public static void verProducto() {
@@ -82,7 +81,6 @@ public class Deposito {
         }
     }
 
-    // Separo código repetitivo.
     private static void opcioninvalida(){
         System.out.println("Opción inválida. Solo se permiten números.");
         Utils.sc.nextLine();
