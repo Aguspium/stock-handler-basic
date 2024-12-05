@@ -51,21 +51,21 @@ public class Deposito {
         }
     }
 
-    private static void mostrarProducto(Producto producto) {
-        System.out.println("nombre: " + producto.getNombre() +
-                "\ncantidad: " + producto.getCantidad() +
-                "\nprecio: " + producto.getPrecio() +
-                "\nid: " + producto.getId() +
-                "\nvencimiento: " + producto.getVencimiento());
+    public static void mostrarProducto(Producto producto) {
+        System.out.println("1)nombre: " + producto.getNombre() +
+                "\n2)cantidad: " + producto.getCantidad() +
+                "\n3)precio: " + producto.getPrecio() +
+                "\n4)id: " + producto.getId() +
+                "\n5)vencimiento: " + producto.getVencimiento());
 
         switch (producto) {
-            case Carnes carne -> System.out.println("grasa: " + carne.getCantidadgrasa() + "%" +
-                        "\nproteínas: " + carne.getCantidadproteinas() + "g");
-            case Fruta fruta -> System.out.println("agua: " + fruta.getCantidadagua() + "%" +
-                        "\nazúcar: " + fruta.getCantidadazucar() + "g");
-            case Lacteo lacteo -> System.out.println("agua: " + lacteo.getPorcentajeagua() + "%" +
-                        "\ncalcio: " + lacteo.getPorcentajecalcio() + "%" +
-                        "\nVegano: "+ lacteo.isVegano());
+            case Carnes carne -> System.out.println("6)grasa: " + carne.getCantidadgrasa() + "%" +
+                        "\n7)proteínas: " + carne.getCantidadproteinas() + "g");
+            case Fruta fruta -> System.out.println("6)agua: " + fruta.getCantidadagua() + "%" +
+                        "\n7)azúcar: " + fruta.getCantidadazucar() + "g");
+            case Lacteo lacteo -> System.out.println("6)agua: " + lacteo.getPorcentajeagua() + "%" +
+                        "\n7)calcio: " + lacteo.getPorcentajecalcio() + "%" +
+                        "\n8)Vegano: "+ lacteo.isVegano());
             default -> System.out.println("Tipo de producto no reconocido.");
         }
     }
@@ -74,7 +74,7 @@ public class Deposito {
         if (!verificarListaVacia()) return;
         try {
             Producto producto = seleccionarProducto();
-            producto.Editor(producto);
+           Editor.menuEditor(producto);
         } catch (InputMismatchException e) {
             opcioninvalida();
         }
