@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 
 public class Deposito {
     public static void listaProductos() {
-        if (verificarListaVacia()) return;
+        if (!verificarListaVacia()) return;
         System.out.println("Lista de Productos ");
         for (Producto p : Utils.listaproductos) {
             int a = Utils.listaproductos.indexOf(p) + 1;
@@ -20,19 +20,25 @@ public class Deposito {
         if (!verificarListaVacia()) return;
         try {
             Producto producto = seleccionarProducto();
-            System.out.println("¿Confirmas eliminar a: " + producto.getNombre() + "? [Si/No]");
-            String opcion = Utils.sc.next();
-
-            if (opcion.equalsIgnoreCase("Si")) {
+            if(confirmarAccion()) {
                 Utils.listaproductos.remove(producto);
                 System.out.println("Eliminación de producto completada.");
-            } else {
-                System.out.println("Eliminación de producto cancelada.");
             }
         } catch (InputMismatchException e) {
             opcioninvalida();
         }
     }
+
+    private static Boolean confirmarAccion() {
+        System.out.println("¿Estás seguro de que deseas eliminar el producto? (Si/No)");
+        String opcion = Utils.sc.next();
+        if(opcion.equalsIgnoreCase("No")) {
+            System.out.println("Eliminación de producto cancelada.");
+            return false;
+        }
+        return true;
+    }
+
 
     public static void verProducto() {
         if (!verificarListaVacia()) return;
