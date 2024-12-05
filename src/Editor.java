@@ -6,7 +6,8 @@ import Inventario.Utils.Utils;
 import Inventario.Validar.Validar;
 
 public class Editor {
-    public Editor(Producto p) {
+
+    public static void menuEditor(Producto p) {
         Deposito.mostrarProducto(p);
         int opcion = Validar.Int("\nQue desea editar: ");
         if(opcion >= 1 && opcion <= 5){
