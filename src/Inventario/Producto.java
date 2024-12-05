@@ -7,8 +7,16 @@ public class Producto implements FuncionesObligatorias {
         protected int cantidad;
         protected double costo;
         private double precio;
-        protected static int id;
+        protected int id;
         protected int vencimiento = 0;
+
+    public  void setId(int id) {
+        this.id = id;
+    }
+
+    public void setVencimiento(int vencimiento) {
+        this.vencimiento = vencimiento;
+    }
 
     public Producto(String nombre, int cantidad, double costo){
         this.nombre = nombre;
@@ -49,8 +57,19 @@ public class Producto implements FuncionesObligatorias {
         return id;
     }
 
-    public static void generateId(){
-        id = Utils.rm.nextInt();
+    public int generateId(){
+        int numero = 0;
+        if(Utils.listaproductos.isEmpty()){
+            return numero;
+        }else  {
+            int i = Utils.listaproductos.getLast().getId() + 1;
+            for (Producto p : Utils.listaproductos) {
+                if (p.getId() == i) {
+                    i++;
+                }
+            }
+            return i;
+        }
     }
 
     @Override
@@ -59,6 +78,4 @@ public class Producto implements FuncionesObligatorias {
     precio = aux + costo;
 
     }
-
-    public void Editor(Producto view) {}
 }
