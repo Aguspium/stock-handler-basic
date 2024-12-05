@@ -64,7 +64,8 @@ public class Deposito {
             case Fruta fruta -> System.out.println("agua: " + fruta.getCantidadagua() + "%" +
                         "\nazúcar: " + fruta.getCantidadazucar() + "g");
             case Lacteo lacteo -> System.out.println("agua: " + lacteo.getPorcentajeagua() + "%" +
-                        "\ncalcio: " + lacteo.getPorcentajecalcio() + "%");
+                        "\ncalcio: " + lacteo.getPorcentajecalcio() + "%" +
+                        "\nVegano: "+ lacteo.isVegano());
             default -> System.out.println("Tipo de producto no reconocido.");
         }
     }
