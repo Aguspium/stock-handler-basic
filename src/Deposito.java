@@ -31,12 +31,16 @@ public class Deposito {
 
     private static Boolean confirmarAccion() {
         System.out.println("¿Estás seguro de que deseas eliminar el producto? (Si/No)");
+        while(true){
         String opcion = Utils.sc.next();
-        if(opcion.equalsIgnoreCase("No")) {
-            System.out.println("Eliminación de producto cancelada.");
-            return false;
+            if(opcion.equalsIgnoreCase("No")) {
+                System.out.println("Eliminación de producto cancelada.");
+                return false;
+            } else if(opcion.equalsIgnoreCase("si")){
+                    return true; }
+            System.out.println("Opcion incorrecta solo ingresar [si/no]");
         }
-        return true;
+
     }
 
 
