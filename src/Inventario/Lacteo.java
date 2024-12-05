@@ -29,8 +29,10 @@ public class Lacteo extends Producto {
         this.porcentajeagua = porcentajeagua;
     }
 
-    public boolean isVegano() {
-        return vegano;
+    public String isVegano() {
+        String a;
+        if(vegano){a = "si es vegano";}else{a = "no es vegano";}
+        return a;
     }
 
     public void setVegano(boolean vegano) {
@@ -48,9 +50,7 @@ public class Lacteo extends Producto {
             System.out.println("3) Editar Precio: "+ lacteos.getPrecio() );
             System.out.println("4) Editar Cantidad de Agua: " + lacteos.getPorcentajeagua());
             System.out.println("5) Editar Cantidad de Calcio:"+ lacteos.getPorcentajecalcio());
-            String a;
-            if(lacteos.isVegano()){a = "si es vegano";}else{a = "no es vegano";}
-            System.out.println("6) Editar Vegano: "+ a );
+            System.out.println("6) Editar Vegano: "+ lacteos.isVegano());
             int opcion = Utils.sc.nextInt();
 
             switch (opcion)
