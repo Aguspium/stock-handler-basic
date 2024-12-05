@@ -9,16 +9,19 @@ public class Creador {
 
     public Creador() {
         while (true) {
-                System.out.println("Ingresa el tipo de producto: ");
-                System.out.println("1) Carne");
-                System.out.println("2) Fruta");
-                System.out.println("3) Lácteo");
-                int tipo = validarInt("");
+            System.out.println("Ingresa el tipo de producto: ");
+            System.out.println("1) Carne");
+            System.out.println("2) Fruta");
+            System.out.println("3) Lácteo");
+            System.out.println("4) Volver al menu");
+            int tipo = validarInt("");
 
-                if (tipo >= 1 && tipo <= 3) {
-                    agregarProducto(tipo);
-                    break;
-                } else {
+            if (tipo >= 1 && tipo <= 3) {
+                agregarProducto(tipo);
+                break;
+            } else if (tipo == 4) {
+                break;
+            }else {
                     System.out.println("Opción inválida.");
                 }
 
