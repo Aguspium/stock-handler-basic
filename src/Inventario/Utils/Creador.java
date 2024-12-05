@@ -10,11 +10,12 @@ public class Creador {
 
     public Creador() {
         while (true) {
-            System.out.println("Ingresa el tipo de producto: ");
-            System.out.println("1) Carne");
-            System.out.println("2) Fruta");
-            System.out.println("3) Lácteo");
-            System.out.println("4) Volver al menu");
+            System.out.println("""
+                    Ingresa el tipo de producto:
+                    1) Carne
+                    2) Fruta
+                    3) Lácteo
+                    4) Volver al menu""");
             int tipo = Validar.Int("");
 
             if (tipo >= 1 && tipo <= 3) {

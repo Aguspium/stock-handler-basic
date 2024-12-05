@@ -58,7 +58,7 @@ public class Validar {
                 }
             }
         } while (!a);
-        System.out.println("\nNombre " + nombre + " Agregado con exito!");
+        System.out.println("\nNombre " + nombre + " Agregado con Éxito!");
         return nombre;
     }
 }
