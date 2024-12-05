@@ -8,4 +8,5 @@ public class Utils {
     public static Scanner sc = new Scanner(System.in);
     public static ArrayList<Producto> listaproductos = new ArrayList<>();
     public static Random rm = new Random(System.nanoTime());
+
 }
