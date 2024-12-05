@@ -25,5 +25,4 @@ public class Fruta extends Producto{
     public void setCantidadazucar(int cantidadazucar) {
         this.cantidadazucar = cantidadazucar;
     }
-
 }

@@ -1,6 +1,7 @@
 package Inventario;
 import Inventario.Interfaces.FuncionesObligatorias;
 import Inventario.Utils.Utils;
+import java.time.LocalDate;
 
 public class Producto implements FuncionesObligatorias {
         protected String nombre;
@@ -8,20 +9,20 @@ public class Producto implements FuncionesObligatorias {
         protected double costo;
         private double precio;
         protected int id;
-        protected int vencimiento = 0;
-
-    public  void setId(int id) {
-        this.id = id;
-    }
-
-    public void setVencimiento(int vencimiento) {
-        this.vencimiento = vencimiento;
-    }
+        protected LocalDate vencimiento;
 
     public Producto(String nombre, int cantidad, double costo){
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.costo = costo;
+    }
+
+    public void setVencimiento(LocalDate vencimiento) {
+        this.vencimiento = vencimiento;
+    }
+
+    public LocalDate getVencimiento(){
+        return vencimiento;
     }
 
     public int getCantidad() {
@@ -49,12 +50,16 @@ public class Producto implements FuncionesObligatorias {
         return precio;
     }
 
-    public int getVencimiento() {
-        return vencimiento;
-    }
-
     public int getId() {
         return id;
+    }
+
+    public  void setId(int id) {
+        this.id = id;
+    }
+
+    public LocalDate generateVencimiento() {
+        return LocalDate.now().plusYears(1);
     }
 
     public int generateId(){

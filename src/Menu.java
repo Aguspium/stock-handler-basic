@@ -2,7 +2,6 @@ import Inventario.Utils.Creador;
 import Inventario.Validar.Validar;
 
 public class Menu {
-
     public Menu() {
         while (true) {
             System.out.println("""

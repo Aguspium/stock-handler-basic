@@ -4,7 +4,6 @@ import Inventario.Lacteo;
 import Inventario.Producto;
 import Inventario.Utils.Utils;
 import Inventario.Validar.Validar;
-
 import java.util.InputMismatchException;
 
 public class Deposito {
@@ -55,8 +54,8 @@ public class Deposito {
         System.out.println("1)nombre: " + producto.getNombre() +
                 "\n2)cantidad: " + producto.getCantidad() +
                 "\n3)precio: " + producto.getPrecio() +
-                "\n4)id: " + producto.getId() +
-                "\n5)vencimiento: " + producto.getVencimiento());
+                "\nid: " + producto.getId() +
+                "\nvencimiento: " + producto.getVencimiento());
 
         switch (producto) {
             case Carnes carne -> System.out.println("6)grasa: " + carne.getCantidadgrasa() + "%" +

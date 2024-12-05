@@ -13,7 +13,6 @@ public class Editor {
         if(opcion >= 1 && opcion <= 5){
             Basic(opcion, p);
         }
-
         switch (p) {
             case Carnes carne -> Carne(carne, opcion);
             case Fruta fruta -> Fruta(fruta, opcion);
@@ -45,15 +44,11 @@ public class Editor {
     }
 
     public static void Basic(int opcion, Producto p){
-
         switch(opcion){
             case 1 -> {System.out.println("Ingresa el nuevo Nombre: "); p.setNombre(Utils.sc.next());}
             case 2 -> p.setCantidad(Validar.Int("Ingresa la nueva Cantidad: "));
             case 3 -> p.setPrecio(Validar.Int("Ingresa el nuevo Precio: "));
             case 4 -> p.setId(Validar.Int("Ingresa la nueva Id: "));
-            case 5 -> p.setVencimiento(Validar.Int("Ingresa el nuevo Vencimiento: "));
         }
     }
 }
-
-

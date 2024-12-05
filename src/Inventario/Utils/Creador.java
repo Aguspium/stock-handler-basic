@@ -4,7 +4,6 @@ import Inventario.Fruta;
 import Inventario.Lacteo;
 import Inventario.Producto;
 import Inventario.Validar.Validar;
-import java.util.InputMismatchException;
 
 public class Creador {
 
@@ -30,34 +29,23 @@ public class Creador {
         }
 
     public void agregarProducto(int tipo) {
-        try {
             String nombre = Validar.Nombre();
             int cantidad = Validar.Int("\nIngresa la cantidad del producto: ");
             double costo = Validar.Double("\nIngresa el costo del producto");
             Producto producto = null;
             switch (tipo) {
-                case 1: // Carnes
-                    producto = crearCarne(nombre, cantidad, costo);
-                    break;
-                case 2: // Frutas
-                    producto = crearFruta(nombre, cantidad, costo);
-                    break;
-                case 3: // Lácteos
-                    producto = crearLacteo(nombre, cantidad, costo);
-                    break;
-                default:
-                    System.err.println("\nOpción no válida.");
+                case 1 -> producto = crearCarne(nombre, cantidad, costo);
+                case 2 -> producto = crearFruta(nombre, cantidad, costo);
+                case 3 -> producto = crearLacteo(nombre, cantidad, costo);
+                default -> System.err.println("\nOpción no válida.");
             }
             if (producto != null) {
                 producto.generadorPrecio();
                 producto.setId(producto.generateId());
+                producto.setVencimiento(producto.generateVencimiento());
                 Utils.listaproductos.add(producto);
                 System.out.println("\nProducto agregado exitosamente.");
             }
-        } catch (InputMismatchException e) {
-            System.err.println("\nDato ingresado no valido");
-            Utils.sc.nextLine();
-        }
     }
 
     private Producto crearCarne(String nombre, int cantidad, double costo) {
