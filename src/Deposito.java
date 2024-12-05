@@ -43,7 +43,6 @@ public class Deposito {
 
     }
 
-
     public static void verProducto() {
         if (!verificarListaVacia()) return;
         try {
