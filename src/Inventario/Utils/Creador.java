@@ -50,7 +50,7 @@ public class Creador {
             }
             if (producto != null) {
                 producto.generadorPrecio();
-                Producto.generateId();
+                producto.setId(producto.generateId());
                 Utils.listaproductos.add(producto);
                 System.out.println("\nProducto agregado exitosamente.");
             }
