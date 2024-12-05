@@ -3,6 +3,7 @@ import Inventario.Fruta;
 import Inventario.Lacteo;
 import Inventario.Producto;
 import Inventario.Utils.Utils;
+import Inventario.Validar.Validar;
 
 import java.util.InputMismatchException;
 
@@ -92,10 +93,15 @@ public class Deposito {
         return true;
     }
 
-    private static Producto seleccionarProducto(){
+    private static Producto seleccionarProducto() {
         listaProductos();
-        System.out.println("Selecciona el producto: ");
-        int eleccion = Utils.sc.nextInt() - 1;
-        return Utils.listaproductos.get(eleccion);
+        while (true) {
+            int eleccion = Validar.Int("Selecciona el producto:") - 1;
+            if (eleccion >= 0 && eleccion < Utils.listaproductos.size()) {
+                return Utils.listaproductos.get(eleccion);
+            } else {
+                System.err.println("Elección errónea.");
+            }
+        }
     }
 }
