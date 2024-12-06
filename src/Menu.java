@@ -13,17 +13,14 @@ public class Menu {
                 4) Editar un Producto
                 5) Cerrar el Programa
                 """);
-            int opcion = Validar.Int("Selecciona el Menu: ");
 
-            switch (opcion) {
+            switch (Validar.Int("Selecciona una opcion: ")) {
                 case 1 -> Deposito.verProducto();
                 case 2 -> new Creador();
                 case 3 -> Deposito.eliminarProducto();
                 case 4 -> Deposito.editarProducto();
-                case 5 -> {
-                    System.out.println("Adios!");
-                    System.exit(0);
-                }
+                case 5 -> {System.out.println("Adios!");
+                            System.exit(0);}
                 default -> System.out.println("Opción inválida");
             }
         }

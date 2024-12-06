@@ -30,24 +30,23 @@ public class Deposito {
         if (!verificarListaVacia()) return;
         Producto producto = seleccionarProducto();
         mostrarProducto(producto);
-
     }
 
     public static void mostrarProducto(Producto producto) {
-        System.out.println("1)nombre: " + producto.getNombre() +
-                "\n2)cantidad: " + producto.getCantidad() +
-                "\n3)precio: " + producto.getPrecio() +
-                "\nid: " + producto.getId() +
-                "\nvencimiento: " + producto.getVencimiento());
+        System.out.println("1) Nombre: " + producto.getNombre() +
+                "\n2) Cantidad: " + producto.getCantidad() +
+                "\n3) Precio: " + producto.getPrecio() +
+                "\nId: " + producto.getId() +
+                "\nVencimiento: " + producto.getVencimiento());
 
         switch (producto) {
-            case Carnes carne -> System.out.println("6)grasa: " + carne.getCantidadgrasa() + "%" +
-                        "\n7)proteínas: " + carne.getCantidadproteinas() + "g");
-            case Fruta fruta -> System.out.println("6)agua: " + fruta.getCantidadagua() + "%" +
-                        "\n7)azúcar: " + fruta.getCantidadazucar() + "g");
-            case Lacteo lacteo -> System.out.println("6)agua: " + lacteo.getPorcentajeagua() + "%" +
-                        "\n7)calcio: " + lacteo.getPorcentajecalcio() + "%" +
-                        "\n8)Vegano: "+ lacteo.isVegano());
+            case Carnes carne -> System.out.println("6) Grasa: " + carne.getCantidadgrasa() + "%" +
+                        "\n7) Proteínas: " + carne.getCantidadproteinas() + "g");
+            case Fruta fruta -> System.out.println("6) Agua: " + fruta.getCantidadagua() + "%" +
+                        "\n7) Azúcar: " + fruta.getCantidadazucar() + "g");
+            case Lacteo lacteo -> System.out.println("6) Agua: " + lacteo.getPorcentajeagua() + "%" +
+                        "\n7) Calcio: " + lacteo.getPorcentajecalcio() + "%" +
+                        "\n8) Vegano: "+ lacteo.isVegano());
             default -> System.out.println("Tipo de producto no reconocido.");
         }
     }
@@ -56,7 +55,6 @@ public class Deposito {
         if (!verificarListaVacia()) return;
         Producto producto = seleccionarProducto();
         Editor.menuEditor(producto);
-
     }
 
     private static Boolean verificarListaVacia(){
