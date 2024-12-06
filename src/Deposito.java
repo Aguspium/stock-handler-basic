@@ -18,27 +18,12 @@ public class Deposito {
 
     public static void eliminarProducto() {
         if (!verificarListaVacia()) return;
-        try {
-            Producto producto = seleccionarProducto();
-            if(confirmarAccion()) {
+        Producto producto = seleccionarProducto();
+            if(Validar.SiNo("Estas seguro de que deseas eliminar el producto? [Si/No]")) {
                 Utils.listaproductos.remove(producto);
                 System.out.println("Eliminación de producto completada.");
-            }
-        } catch (InputMismatchException e) {
-            opcioninvalida();
-        }
-    }
-
-    private static Boolean confirmarAccion() {
-        System.out.println("¿Estás seguro de que deseas eliminar el producto? (Si/No)");
-        while(true){
-        String opcion = Utils.sc.next();
-            if(opcion.equalsIgnoreCase("No")) {
+            } else{
                 System.out.println("Eliminación de producto cancelada.");
-                return false;
-            } else if(opcion.equalsIgnoreCase("si")){
-                    return true; }
-            System.out.println("Opcion incorrecta solo ingresar [si/no]");
         }
     }
 
