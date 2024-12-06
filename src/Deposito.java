@@ -4,7 +4,6 @@ import Inventario.Lacteo;
 import Inventario.Producto;
 import Inventario.Utils.Utils;
 import Inventario.Validar.Validar;
-import java.util.InputMismatchException;
 
 public class Deposito {
     public static void listaProductos() {
@@ -29,12 +28,9 @@ public class Deposito {
 
     public static void verProducto() {
         if (!verificarListaVacia()) return;
-        try {
-            Producto producto = seleccionarProducto();
-            mostrarProducto(producto);
-        } catch (InputMismatchException e) {
-            opcioninvalida();
-        }
+        Producto producto = seleccionarProducto();
+        mostrarProducto(producto);
+
     }
 
     public static void mostrarProducto(Producto producto) {
@@ -58,17 +54,9 @@ public class Deposito {
 
     public static void editarProducto() {
         if (!verificarListaVacia()) return;
-        try {
-            Producto producto = seleccionarProducto();
-           Editor.menuEditor(producto);
-        } catch (InputMismatchException e) {
-            opcioninvalida();
-        }
-    }
+        Producto producto = seleccionarProducto();
+        Editor.menuEditor(producto);
 
-    private static void opcioninvalida(){
-        System.out.println("Opción inválida. Solo se permiten números.");
-        Utils.sc.nextLine();
     }
 
     private static Boolean verificarListaVacia(){
