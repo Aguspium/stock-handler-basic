@@ -8,6 +8,10 @@ import Inventario.Validar.Validar;
 public class Creador {
 
     public Creador() {
+        menuCreador();
+        }
+
+    public void menuCreador() {
         while (true) {
             System.out.println("""
                     Ingresa el tipo de producto:
@@ -23,10 +27,10 @@ public class Creador {
             } else if (tipo == 4) {
                 break;
             }else {
-                    System.err.println("Opción inválida.");
-                }
+                System.err.println("Opción inválida.");
             }
         }
+    }
 
     public void agregarProducto(int tipo) {
             String nombre = Validar.Nombre();
@@ -40,15 +44,11 @@ public class Creador {
                 default -> System.err.println("\nOpción no válida.");
             }
             if (producto != null) {
-                producto.generadorPrecio();
-                producto.setId(producto.generateId());
-                producto.setVencimiento(producto.generateVencimiento());
-                Utils.listaproductos.add(producto);
-                System.out.println("\nProducto agregado exitosamente.");
+                Producto.addProducto(producto);
             }
     }
 
-    private Producto crearCarne(String nombre, int cantidad, double costo) {
+    public Producto crearCarne(String nombre, int cantidad, double costo) {
         int cantidadGrasa = Validar.Int("\nIngresa el porcentaje de grasa: ");
         int cantidadProteina = Validar.Int("\nIngresa la cantidad de proteínas: ");
         return new Carnes(nombre, cantidad, costo, cantidadGrasa, cantidadProteina);

@@ -83,4 +83,13 @@ public class Producto implements FuncionesObligatorias {
     precio = aux + costo;
 
     }
+
+    public static Producto addProducto(Producto p){
+        p.generadorPrecio();
+        p.setId(p.generateId());
+        p.setVencimiento(p.generateVencimiento());
+        System.out.println("\nProducto agregado exitosamente.");
+        Utils.listaproductos.add(p);
+        return p;
+    }
 }
