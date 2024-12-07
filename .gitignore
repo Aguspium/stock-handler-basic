@@ -2,7 +2,6 @@ HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !/src/main//target/
-!/src/test//target/
 
 STS
 .apt_generated
@@ -19,6 +18,8 @@ IntelliJ IDEA
 *.iml
 *.ipr
 out/
+src/v2/
+
 
 NetBeans
 /nbproject/private/
@@ -26,9 +27,7 @@ NetBeans
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!/src/main//build/
-!/src/test//build/
+build//build/
 
 VS Code
 .vscode/
