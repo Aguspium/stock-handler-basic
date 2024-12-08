@@ -30,6 +30,7 @@ public class Validar {
     }
 
     public static boolean SiNo(String mensaje) {
+
         while (true) {
             System.out.println(mensaje);
             String eleccion = Utils.sc.next();
@@ -43,11 +44,11 @@ public class Validar {
         }
     }
 
-    public static String Nombre() {
+    public static String Nombre(String mensaje) {
         boolean a;
         String nombre;
         do {
-            System.out.println("\nIngresa el nombre del Producto: ");
+            System.out.println(mensaje);
             nombre = Utils.sc.next();
             a = true;
             for (Producto p : Utils.listaproductos) {

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class ProductoTest {
 
-   @DisplayName("Se espera que el Id sea diferente" +
+    @DisplayName("Se espera que el Id sea diferente" +
             "Que la fecha de vencimiento sea la misma" +
             "Que el precio sea el mismo" +
             "Que el objeto sea distinto")
@@ -22,6 +22,5 @@ public class ProductoTest {
         Assertions.assertEquals(esperado.getPrecio(), resultado.getPrecio());
         Assertions.assertNotEquals(esperado, resultado);
         Assertions.assertNotEquals(Utils.listaproductos.getFirst(), resultado); //Compara la direccion de memoria no los valores
-
     }
 }
