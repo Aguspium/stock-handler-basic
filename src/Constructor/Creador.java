@@ -1,4 +1,4 @@
-package Inventario.Utils;
+package Constructor;
 import Inventario.Carnes;
 import Inventario.Fruta;
 import Inventario.Lacteo;
@@ -33,7 +33,7 @@ public class Creador {
     }
 
     public void constructorProducto(int tipo) {
-            String nombre = Validar.Nombre();
+            String nombre = Validar.Nombre("Ingresa el nombre del Producto: ");
             int cantidad = Validar.Int("\nIngresa la cantidad del producto: ");
             double costo = Validar.Double("\nIngresa el costo del producto");
             switch (tipo) {

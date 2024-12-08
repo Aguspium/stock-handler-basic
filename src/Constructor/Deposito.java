@@ -1,3 +1,5 @@
+package Constructor;
+
 import Inventario.Carnes;
 import Inventario.Fruta;
 import Inventario.Lacteo;
