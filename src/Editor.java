@@ -10,7 +10,7 @@ public class Editor {
     public static void menuEditor(Producto p) {
         Deposito.mostrarProducto(p);
         int opcion = Validar.Int("\nQue desea editar: ");
-        if(opcion >= 1 && opcion <= 5){
+        if(opcion >= 1 && opcion < 5){
             Basic(opcion, p);
         }
         switch (p) {
@@ -23,23 +23,23 @@ public class Editor {
 
     private static void Carne(Carnes carne, int opcion){
         switch (opcion){
-            case 6 -> carne.setCantidadgrasa(Validar.Int("Ingresa el nuevo porcentaje de Grasa: "));
-            case 7 -> carne.setCantidadproteinas(Validar.Int("Ingresa la nueva cantidad de Proteínas: "));
+            case 4 -> carne.setCantidadgrasa(Validar.Int("Ingresa el nuevo porcentaje de Grasa: "));
+            case 5 -> carne.setCantidadproteinas(Validar.Int("Ingresa la nueva cantidad de Proteínas: "));
         }
     }
 
     public static void Fruta(Fruta fruta, int opcion){
         switch (opcion) {
-            case 6 -> fruta.setCantidadagua(Validar.Int("Ingresa el nuevo porcentaje de Agua"));
-            case 7 -> fruta.setCantidadazucar(Validar.Int("Ingresa la nueva cantidad de Azúcar: "));
+            case 4 -> fruta.setCantidadagua(Validar.Int("Ingresa el nuevo porcentaje de Agua"));
+            case 5 -> fruta.setCantidadazucar(Validar.Int("Ingresa la nueva cantidad de Azúcar: "));
         }
     }
 
     public static void Lacteo(Lacteo lacteo, int opcion) {
         switch (opcion) {
-            case 6 -> lacteo.setPorcentajeagua(Validar.Int("Ingresa el nuevo porcentaje de Agua"));
-            case 7 -> lacteo.setPorcentajecalcio(Validar.Int("Ingresa el nuevo porcentaje de Calcio "));
-            case 8 -> lacteo.setVegano(Validar.SiNo("Es vegano? [si/no]: "));
+            case 4 -> lacteo.setPorcentajeagua(Validar.Int("Ingresa el nuevo porcentaje de Agua"));
+            case 5 -> lacteo.setPorcentajecalcio(Validar.Int("Ingresa el nuevo porcentaje de Calcio "));
+            case 6 -> lacteo.setVegano(Validar.SiNo("Es vegano? [si/no]: "));
         }
     }
 
@@ -48,7 +48,6 @@ public class Editor {
             case 1 -> {System.out.println("Ingresa el nuevo Nombre: "); p.setNombre(Utils.sc.next());}
             case 2 -> p.setCantidad(Validar.Int("Ingresa la nueva Cantidad: "));
             case 3 -> p.setPrecio(Validar.Int("Ingresa el nuevo Precio: "));
-            case 4 -> p.setId(Validar.Int("Ingresa la nueva Id: "));
         }
     }
 }
