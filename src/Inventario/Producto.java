@@ -88,8 +88,8 @@ public class Producto implements FuncionesObligatorias {
         p.generadorPrecio();
         p.setId(p.generateId());
         p.setVencimiento(p.generateVencimiento());
-        System.out.println("\nProducto agregado exitosamente.");
         Utils.listaproductos.add(p);
+        System.out.println("\nProducto agregado exitosamente.");
         return p;
     }
 }
