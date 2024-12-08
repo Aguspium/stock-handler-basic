@@ -22,7 +22,7 @@ public class Creador {
             int tipo = Validar.Int("");
 
             if (tipo >= 1 && tipo <= 3) {
-                agregarProducto(tipo);
+                constructorProducto(tipo);
                 break;
             } else if (tipo == 4) {
                 break;
@@ -32,38 +32,34 @@ public class Creador {
         }
     }
 
-    public void agregarProducto(int tipo) {
+    public void constructorProducto(int tipo) {
             String nombre = Validar.Nombre();
             int cantidad = Validar.Int("\nIngresa la cantidad del producto: ");
             double costo = Validar.Double("\nIngresa el costo del producto");
-            Producto producto = null;
             switch (tipo) {
-                case 1 -> producto = crearCarne(nombre, cantidad, costo);
-                case 2 -> producto = crearFruta(nombre, cantidad, costo);
-                case 3 -> producto = crearLacteo(nombre, cantidad, costo);
+                case 1 ->  constructorCarne(nombre, cantidad, costo);
+                case 2 ->  constructorFruta(nombre, cantidad, costo);
+                case 3 ->  constructorLacteo(nombre, cantidad, costo);
                 default -> System.err.println("\nOpción no válida.");
             }
-            if (producto != null) {
-                Producto.addProducto(producto);
-            }
     }
 
-    public Producto crearCarne(String nombre, int cantidad, double costo) {
+    public void constructorCarne(String nombre, int cantidad, double costo) {
         int cantidadGrasa = Validar.Int("\nIngresa el porcentaje de grasa: ");
         int cantidadProteina = Validar.Int("\nIngresa la cantidad de proteínas: ");
-        return new Carnes(nombre, cantidad, costo, cantidadGrasa, cantidadProteina);
+        Producto.addProducto(new Carnes(nombre, cantidad, costo, cantidadGrasa, cantidadProteina));
     }
 
-    private Producto crearFruta(String nombre, int cantidad, double costo) {
+    private void constructorFruta(String nombre, int cantidad, double costo) {
         int cantidadAzucar = Validar.Int("\nIngresa la cantidad de azúcar: ");
         int cantidadAgua = Validar.Int("\nIngresa el porcentaje de agua: ");
-        return new Fruta(nombre, cantidad, costo, cantidadAgua, cantidadAzucar);
+        Producto.addProducto(new Fruta(nombre, cantidad, costo, cantidadAgua, cantidadAzucar));
     }
 
-    private Producto crearLacteo(String nombre, int cantidad, double costo) {
+    private void constructorLacteo(String nombre, int cantidad, double costo) {
         int cantidadAgua = Validar.Int("\nIngresa el porcentaje de agua: ");
         int cantidadCalcio = Validar.Int("\nIngresa el porcentaje de calcio: ");
         boolean vegano = Validar.SiNo("\n¿El lácteo es vegano? [Si/No]:");
-        return new Lacteo(nombre, cantidad, costo, cantidadAgua, cantidadCalcio, vegano);
+        Producto.addProducto(new Lacteo(nombre, cantidad, costo, cantidadAgua, cantidadCalcio, vegano));
     }
 }
