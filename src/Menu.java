@@ -2,9 +2,10 @@ import Constructor.Creador;
 import Constructor.Deposito;
 import Inventario.Validar.Validar;
 
+
 public class Menu {
     public Menu() {
-        while (true) {
+       while (true) {
             System.out.println("""
                 --- Stock Handler ---
                 
