@@ -19,7 +19,7 @@ public class Creador {
                     2) Fruta
                     3) Lácteo
                     4) Volver al menu""");
-            int tipo = Validar.Int("");
+            byte tipo = Validar.Byte("");
 
             if (tipo >= 1 && tipo <= 3) {
                 constructorProducto(tipo);
@@ -32,7 +32,7 @@ public class Creador {
         }
     }
 
-    public void constructorProducto(int tipo) {
+    public void constructorProducto(byte tipo) {
             String nombre = Validar.Nombre("Ingresa el nombre del Producto: ");
             int cantidad = Validar.Int("\nIngresa la cantidad del producto: ");
             double costo = Validar.Double("\nIngresa el costo del producto");

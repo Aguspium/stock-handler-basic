@@ -3,7 +3,7 @@ import Inventario.Carnes;
 import Inventario.Fruta;
 import Inventario.Lacteo;
 import Inventario.Producto;
-import Inventario.Utils.Utils;
+import static Inventario.Utils.Utils.listaproductos;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ public class ProductoTest {
         Assertions.assertEquals(esperado.getVencimiento(), resultado.getVencimiento());
         Assertions.assertEquals(esperado.getPrecio(), resultado.getPrecio());
         Assertions.assertNotEquals(esperado, resultado);
-        Assertions.assertNotEquals(Utils.listaproductos.getFirst(), resultado); //Compara la direccion de memoria no los valores
+        Assertions.assertNotEquals(listaproductos.getFirst(), resultado); //Compara la direccion de memoria no los valores
     }
 
     @Test
@@ -36,7 +36,7 @@ public class ProductoTest {
         Assertions.assertEquals(esperado.getVencimiento(), resultado.getVencimiento());
         Assertions.assertEquals(esperado.getPrecio(), resultado.getPrecio());
         Assertions.assertNotEquals(esperado, resultado);
-        Assertions.assertNotEquals(Utils.listaproductos.getFirst(), resultado);
+        Assertions.assertNotEquals(listaproductos.getFirst(), resultado);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class ProductoTest {
         Assertions.assertEquals(esperado.getVencimiento(), resultado.getVencimiento());
         Assertions.assertEquals(esperado.getPrecio(), resultado.getPrecio());
         Assertions.assertNotEquals(esperado, resultado);
-        Assertions.assertNotEquals(Utils.listaproductos.getFirst(), resultado);
+        Assertions.assertNotEquals(listaproductos.getFirst(), resultado);
     }
 
     @Test

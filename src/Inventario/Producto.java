@@ -1,6 +1,6 @@
 package Inventario;
 import Inventario.Interfaces.FuncionesObligatorias;
-import Inventario.Utils.Utils;
+import static Inventario.Utils.Utils.listaproductos;
 import java.time.LocalDate;
 
 public class Producto implements FuncionesObligatorias {
@@ -64,11 +64,11 @@ public class Producto implements FuncionesObligatorias {
 
     public int generateId(){
         int numero = 0;
-        if(Utils.listaproductos.isEmpty()){
+        if(listaproductos.isEmpty()){
             return numero;
         }else  {
-            int i = Utils.listaproductos.getLast().getId() + 1;
-            for (Producto p : Utils.listaproductos) {
+            int i = listaproductos.getLast().getId() + 1;
+            for (Producto p : listaproductos) {
                 if (p.getId() == i) {
                     i++;
                 }
@@ -88,7 +88,7 @@ public class Producto implements FuncionesObligatorias {
         p.generadorPrecio();
         p.setId(p.generateId());
         p.setVencimiento(p.generateVencimiento());
-        Utils.listaproductos.add(p);
+        listaproductos.add(p);
         System.out.println("\nProducto agregado exitosamente.");
         return p;
     }

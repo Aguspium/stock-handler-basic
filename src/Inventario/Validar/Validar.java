@@ -1,7 +1,8 @@
 package Inventario.Validar;
 import Inventario.Producto;
-import Inventario.Utils.Utils;
 import java.util.InputMismatchException;
+import static Inventario.Utils.Utils.listaproductos;
+import static Inventario.Utils.Utils.sc;
 
 public class Validar {
 
@@ -9,10 +10,10 @@ public class Validar {
         while (true) {
             try {
                 System.out.println(mensaje);
-                return Utils.sc.nextInt();
+                return sc.nextInt();
             } catch (InputMismatchException e) {
                 System.err.println("\nError, ingresa un número.");
-                Utils.sc.nextLine();
+                sc.nextLine();
             }
         }
     }
@@ -21,10 +22,22 @@ public class Validar {
         while (true) {
             try {
                 System.out.println(mensaje);
-                return Utils.sc.nextDouble();
+                return sc.nextDouble();
             } catch (InputMismatchException e) {
                 System.err.println("\nError, ingresa un número Ejemplo: [100,23].");
-                Utils.sc.nextLine();
+                sc.nextLine();
+            }
+        }
+    }
+
+    public static byte Byte(String mensaje) {
+        while (true) {
+            try {
+                System.out.println(mensaje);
+                return sc.nextByte();
+            } catch (InputMismatchException e) {
+                System.err.println("\nError, ingresa un número.");
+                sc.nextLine();
             }
         }
     }
@@ -33,7 +46,7 @@ public class Validar {
 
         while (true) {
             System.out.println(mensaje);
-            String eleccion = Utils.sc.next();
+            String eleccion = sc.next();
             if (eleccion.equalsIgnoreCase("si")) {
                 return true;
             } else if (eleccion.equalsIgnoreCase("no")) {
@@ -49,9 +62,9 @@ public class Validar {
         String nombre;
         do {
             System.out.println(mensaje);
-            nombre = Utils.sc.next();
+            nombre = sc.next();
             a = true;
-            for (Producto p : Utils.listaproductos) {
+            for (Producto p : listaproductos) {
                 if (nombre.equalsIgnoreCase(p.getNombre())) {
                     System.err.println("\nEste producto ya existe prueba con otro!");
                     a = false;

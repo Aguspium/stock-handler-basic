@@ -4,15 +4,15 @@ import Inventario.Carnes;
 import Inventario.Fruta;
 import Inventario.Lacteo;
 import Inventario.Producto;
-import Inventario.Utils.Utils;
+import static Inventario.Utils.Utils.listaproductos;
 import Inventario.Validar.Validar;
 
 public class Deposito {
     public static void listaProductos() {
         if (!verificarListaVacia()) return;
         System.out.println("Lista de Productos ");
-        for (Producto p : Utils.listaproductos) {
-            int a = Utils.listaproductos.indexOf(p) + 1;
+        for (Producto p : listaproductos) {
+            int a = listaproductos.indexOf(p) + 1;
             System.out.println(a + ") " + p.getNombre());
         }
     }
@@ -21,7 +21,7 @@ public class Deposito {
         if (!verificarListaVacia()) return;
         Producto producto = seleccionarProducto();
             if(Validar.SiNo("Estas seguro de que deseas eliminar el producto? [Si/No]")) {
-                Utils.listaproductos.remove(producto);
+                listaproductos.remove(producto);
                 System.out.println("Eliminación de producto completada.");
             } else{
                 System.out.println("Eliminación de producto cancelada.");
@@ -60,7 +60,7 @@ public class Deposito {
     }
 
     private static Boolean verificarListaVacia(){
-        if (Utils.listaproductos.isEmpty()) {
+        if (listaproductos.isEmpty()) {
             System.out.println("La lista de productos se encuentra vacía.");
             return false;
         }
@@ -71,8 +71,8 @@ public class Deposito {
         listaProductos();
         while (true) {
             int eleccion = Validar.Int("Selecciona el producto:") - 1;
-            if (eleccion >= 0 && eleccion < Utils.listaproductos.size()) {
-                return Utils.listaproductos.get(eleccion);
+            if (eleccion >= 0 && eleccion < listaproductos.size()) {
+                return listaproductos.get(eleccion);
             } else {
                 System.err.println("Elección errónea.");
             }

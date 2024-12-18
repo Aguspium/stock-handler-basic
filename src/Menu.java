@@ -2,9 +2,10 @@ import Constructor.Creador;
 import Constructor.Deposito;
 import Inventario.Validar.Validar;
 
-
 public class Menu {
     public Menu() {
+
+
        while (true) {
             System.out.println("""
                 --- Stock Handler ---
@@ -16,7 +17,7 @@ public class Menu {
                 5) Cerrar el Programa
                 """);
 
-            switch (Validar.Int("Selecciona una opcion: ")) {
+            switch (Validar.Byte("Selecciona una opcion: ")) {
                 case 1 -> Deposito.verProducto();
                 case 2 -> new Creador();
                 case 3 -> Deposito.eliminarProducto();
