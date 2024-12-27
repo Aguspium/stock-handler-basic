@@ -72,6 +72,7 @@ public class Validar {
                 }
             }
         } while (!a);
+        nombre = nombre.substring(0, 1).toUpperCase() + nombre.substring(1).toLowerCase();
         System.out.println("\nNombre " + nombre + " Agregado con Éxito!");
         return nombre;
     }
