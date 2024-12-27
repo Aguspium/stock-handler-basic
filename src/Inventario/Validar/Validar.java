@@ -65,10 +65,14 @@ public class Validar {
             nombre = sc.next();
             a = true;
             for (Producto p : listaproductos) {
-                if (nombre.equalsIgnoreCase(p.getNombre())) {
-                    System.err.println("\nEste producto ya existe prueba con otro!");
+                if (nombre.trim().isEmpty()) {
+                    System.err.println("\nEl nombre no puede estar vacío.");
                     a = false;
                     break;
+                }else if(nombre.equalsIgnoreCase(p.getNombre())) {
+                System.err.println("\nEste producto ya existe prueba con otro!");
+                a = false;
+                break;
                 }
             }
         } while (!a);
