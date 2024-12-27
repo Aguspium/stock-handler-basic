@@ -63,7 +63,7 @@ public class Producto implements FuncionesObligatorias {
     }
 
     public int generateId(){
-        int numero = 0;
+        int numero = 1;
         if(listaproductos.isEmpty()){
             return numero;
         }else  {
