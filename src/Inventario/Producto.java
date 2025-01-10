@@ -1,20 +1,22 @@
 package Inventario;
-import Inventario.Interfaces.FuncionesObligatorias;
+import Inventario.Interfaces.Funciones;
 import static Inventario.Utils.Utils.listaproductos;
 import java.time.LocalDate;
 
-public class Producto implements FuncionesObligatorias {
+public class Producto implements Funciones {
         protected String nombre;
         protected int cantidad;
         protected double costo;
         private double precio;
         protected int id;
         protected LocalDate vencimiento;
+        protected Double descuento = 0.0;
 
     public Producto(String nombre, int cantidad, double costo){
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.costo = costo;
+        this.generadorPrecio();
     }
 
     public void setVencimiento(LocalDate vencimiento) {
@@ -58,9 +60,20 @@ public class Producto implements FuncionesObligatorias {
         this.id = id;
     }
 
-    public LocalDate generateVencimiento() {
-        return LocalDate.now().plusYears(1);
+    public double getDescuento() {
+        return descuento;
     }
+    public void setDescuento(double descuento) {
+        this.descuento = descuento;
+    }
+
+    public LocalDate generateVencimiento() {
+        return LocalDate.now().minusYears(1);
+    }
+
+    @Override
+    public boolean verificarVencimiento() {
+        return LocalDate.now().isAfter(this.vencimiento);} //si la fecha actual pasa a la del vencimiento devuelve true
 
     public int generateId(){
         int numero = 1;
@@ -77,15 +90,24 @@ public class Producto implements FuncionesObligatorias {
         }
     }
 
-    @Override
     public void generadorPrecio() {
     double aux = costo * 0.5;
     precio = aux + costo;
 
     }
 
+    @Override
+    public double calcularDescuento(double descuento) {
+        if (descuento < 0) {
+            System.out.println("\nEl descuento no puede ser menos de 0.");
+            return descuento;
+        }
+        descuento = descuento / 100;
+        return (precio * descuento);
+
+    }
+
     public static Producto addProducto(Producto p){
-        p.generadorPrecio();
         p.setId(p.generateId());
         p.setVencimiento(p.generateVencimiento());
         listaproductos.add(p);
