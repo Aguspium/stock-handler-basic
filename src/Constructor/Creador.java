@@ -13,13 +13,12 @@ public class Creador {
 
     public void menuCreador() {
         while (true) {
-            System.out.println("""
-                    Ingresa el tipo de producto:
-                    1) Carne
-                    2) Fruta
-                    3) Lácteo
-                    4) Volver al menu""");
-            byte tipo = Validar.Byte("");
+            byte tipo = Validar.Byte("""
+                                Ingresa el tipo de producto:
+                                1) Carne
+                                2) Fruta
+                                3) Lácteo
+                                4) Volver al menu""");
 
             if (tipo >= 1 && tipo <= 3) {
                 constructorProducto(tipo);
