@@ -14,7 +14,8 @@ public class Menu {
                 2) Añadir un Producto
                 3) Eliminar un Producto
                 4) Editar un Producto
-                5) Cerrar el Programa
+                5) Calcular Descuento
+                6) Cerrar Sistema
                 """);
 
             switch (Validar.Byte("Selecciona una opcion: ")) {
@@ -22,7 +23,8 @@ public class Menu {
                 case 2 -> new Creador();
                 case 3 -> Deposito.eliminarProducto();
                 case 4 -> Deposito.editarProducto();
-                case 5 -> {System.out.println("Adios!");
+                case 5 -> Deposito.calcularDescuento();
+                case 6 -> {System.out.println("Adios!");
                             System.exit(0);}
                 default -> System.out.println("Opción inválida");
             }
