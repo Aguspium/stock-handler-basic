@@ -68,7 +68,7 @@ public class Producto implements Funciones {
     }
 
     public LocalDate generateVencimiento() {
-        return LocalDate.now().minusYears(1);
+        return LocalDate.now().plusYears(1);
     }
 
     @Override
