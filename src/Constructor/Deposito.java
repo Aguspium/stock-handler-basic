@@ -14,6 +14,10 @@ public class Deposito {
         for (Producto p : listaproductos) {
             int a = listaproductos.indexOf(p) + 1;
             System.out.println(a + ") " + p.getNombre());
+
+            if (p.verificarVencimiento()) {
+                System.out.println("El producto " + p.getNombre() + " está vencido.");
+            }
         }
     }
 
@@ -41,16 +45,21 @@ public class Deposito {
 
         switch (producto) {
             case Carnes carne -> System.out.println("4) Grasa: " + carne.getCantidadgrasa() + "%" +
-                        "\n5) Proteínas: " + carne.getCantidadproteinas() + "g");
+                    "\n5) Proteínas: " + carne.getCantidadproteinas() + "g");
             case Fruta fruta -> System.out.println("4) Agua: " + fruta.getCantidadagua() + "%" +
-                        "\n5) Azúcar: " + fruta.getCantidadazucar() + "g");
+                    "\n5) Azúcar: " + fruta.getCantidadazucar() + "g");
             case Lacteo lacteo -> System.out.println("4) Agua: " + lacteo.getPorcentajeagua() + "%" +
-                        "\n5) Calcio: " + lacteo.getPorcentajecalcio() + "%" +
-                        "\n6) Vegano: "+ lacteo.isVegano());
+                    "\n5) Calcio: " + lacteo.getPorcentajecalcio() + "%" +
+                    "\n6) Vegano: " + lacteo.isVegano());
             default -> System.out.println("Tipo de producto no reconocido.");
         }
         System.out.println("\nId: " + producto.getId() +
                 "\nVencimiento: " + producto.getVencimiento());
+        if (producto.getDescuento() != 0.0) {
+            System.out.println("Descuento aplicado: " + producto.getDescuento() + "$");
+        } else {
+            System.out.println("Descuento: No tiene");
+        }
     }
 
     public static void editarProducto() {
@@ -76,6 +85,22 @@ public class Deposito {
             } else {
                 System.err.println("Elección errónea.");
             }
+        }
+    }
+    public static void calcularDescuento(){
+        if(!verificarListaVacia()) return;
+        System.out.println("Selecciona el producto a calcular");
+        Producto p = seleccionarProducto();
+        double descuento = p.calcularDescuento(Validar.Double("Ingresa el % de descuento:"));
+        System.out.println( "descuento: "+descuento+
+                            "\nprecio con descuento: "+ (p.getPrecio() - descuento)+
+                            "\nprecio sin decuento: "+ p.getPrecio());
+
+        if(Validar.SiNo("Aplicar descuento? [Si/No]")){
+            p.setPrecio(p.getPrecio() - descuento);
+            p.setDescuento(descuento);
+        }else{
+            System.out.println("Descuento no aplicado.");
         }
     }
 }
