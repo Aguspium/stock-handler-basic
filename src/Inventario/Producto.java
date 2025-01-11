@@ -102,11 +102,8 @@ public class Producto implements Funciones {
             System.out.println("\nEl descuento no puede ser menos de 0.");
             return descuento;
         }
-        descuento = descuento / 100;
-        return (precio * descuento);
-
+        return (precio * descuento/100);
     }
-
     public static Producto addProducto(Producto p){
         p.setId(p.generateId());
         p.setVencimiento(p.generateVencimiento());
