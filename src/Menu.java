@@ -14,7 +14,7 @@ public class Menu {
                 2) Añadir un Producto
                 3) Eliminar un Producto
                 4) Editar un Producto
-                5) Calcular Descuento
+                5) Calcular/Aplicar Descuento
                 6) Cerrar Sistema
                 """);
 
