@@ -1,8 +1,4 @@
 package Constructor;
-
-import Inventario.Carnes;
-import Inventario.Fruta;
-import Inventario.Lacteo;
 import Inventario.Producto;
 import static Inventario.Utils.Utils.listaproductos;
 import Inventario.Validar.Validar;
@@ -37,29 +33,8 @@ public class Deposito {
         Producto producto = seleccionarProducto();
         mostrarProducto(producto);
     }
-
     public static void mostrarProducto(Producto producto) {
-        System.out.println("1) Nombre: " + producto.getNombre() +
-                "\n2) Cantidad: " + producto.getCantidad() +
-                "\n3) Precio: " + producto.getPrecio());
-
-        switch (producto) {
-            case Carnes carne -> System.out.println("4) Grasa: " + carne.getCantidadgrasa() + "%" +
-                    "\n5) Proteínas: " + carne.getCantidadproteinas() + "g");
-            case Fruta fruta -> System.out.println("4) Agua: " + fruta.getCantidadagua() + "%" +
-                    "\n5) Azúcar: " + fruta.getCantidadazucar() + "g");
-            case Lacteo lacteo -> System.out.println("4) Agua: " + lacteo.getPorcentajeagua() + "%" +
-                    "\n5) Calcio: " + lacteo.getPorcentajecalcio() + "%" +
-                    "\n6) Vegano: " + lacteo.isVegano());
-            default -> System.out.println("Tipo de producto no reconocido.");
-        }
-        System.out.println("\nId: " + producto.getId() +
-                "\nVencimiento: " + producto.getVencimiento());
-        if (producto.getDescuento() != 0.0) {
-            System.out.println("Descuento aplicado: " + producto.getDescuento() + "$");
-        } else {
-            System.out.println("Descuento: No tiene");
-        }
+        System.out.println(producto.toString());
     }
 
     public static void editarProducto() {
