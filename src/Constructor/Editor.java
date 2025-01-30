@@ -11,7 +11,7 @@ public class Editor {
     public static void menuEditor(Producto p) {
         Deposito.mostrarProducto(p);
         byte opcion = Validar.Byte("\nQue desea editar: ");
-        if(opcion >= 1 && opcion < 5){
+        if(opcion >= 1 && opcion <=3){
             Basic(opcion, p);
         }
         switch (p) {
@@ -31,7 +31,7 @@ public class Editor {
 
     public static void Fruta(Fruta fruta, byte opcion){
         switch (opcion) {
-            case 4 -> editarAtributo("Ingresa el nuevo porcentaje de Agua: ", fruta::setCantidadagua);
+            case 4 -> editarAtributo("Ingresa el nuevo porcentaje de Agua: ", fruta::setPorcentajeagua);
             case 5 -> editarAtributo("Ingresa la nueva cantidad de Azúcar: ", fruta::setCantidadazucar);
         }
     }
