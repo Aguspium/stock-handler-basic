@@ -3,7 +3,7 @@ import Inventario.Interfaces.Funciones;
 import static Inventario.Utils.Utils.listaproductos;
 import java.time.LocalDate;
 
-public class Producto implements Funciones {
+public abstract class Producto implements Funciones {
         protected String nombre;
         protected int cantidad;
         protected double costo;
@@ -110,4 +110,6 @@ public class Producto implements Funciones {
         System.out.println("\nProducto agregado exitosamente.");
         return p;
     }
+
+    public abstract String toString();
 }
