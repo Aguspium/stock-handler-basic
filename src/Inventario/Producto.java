@@ -71,7 +71,6 @@ public class Producto implements Funciones {
         return LocalDate.now().plusYears(1);
     }
 
-    @Override
     public boolean verificarVencimiento() {
         return LocalDate.now().isAfter(this.vencimiento);} //si la fecha actual pasa a la del vencimiento devuelve true
 
