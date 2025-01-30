@@ -40,7 +40,7 @@ public class Lacteo extends Producto {
 
     @Override
     public String toString() {
-        return " 1) Nombre: " + getNombre()
+        return "1) Nombre: " + getNombre()
                 + " \n2) Cantidad: " + getCantidad()
                 + " \n3) Precio: " + getPrecio() + "$"
                 + " \n4) Porcentaje de Agua: " + getPorcentajeagua() + "%"
