@@ -34,7 +34,7 @@ public class Deposito {
         mostrarProducto(producto);
     }
     public static void mostrarProducto(Producto producto) {
-        System.out.println(producto.toString());
+        System.out.println(producto);
     }
 
     public static void editarProducto() {
