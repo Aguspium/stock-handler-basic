@@ -37,4 +37,17 @@ public class Lacteo extends Producto {
     public void setVegano(boolean vegano) {
         this.vegano = vegano;
     }
+
+    @Override
+    public String toString() {
+        return " 1) Nombre: " + getNombre()
+                + " \n2) Cantidad: " + getCantidad()
+                + " \n3) Precio: " + getPrecio() + "$"
+                + " \n4) Porcentaje de Agua: " + getPorcentajeagua() + "%"
+                + " \n5) Porcentaje de Calcio: " + getPorcentajecalcio() + "%"
+                + " \n6) Vegano: " + isVegano()
+                + " \nId: " + getId()
+                + " \nVencimiento: " + getVencimiento()
+                + "Descuento: " + (getDescuento() != 0.0 ? getDescuento() + "$" : "No tiene");
+    }
 }
